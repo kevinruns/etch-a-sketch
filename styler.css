@@ -1,0 +1,55 @@
+
+
+:root {
+    --myvariable: 16;
+}
+
+#container {
+
+    display: grid;
+    grid-template-columns: repeat(var(--myvariable), 1fr);
+    grid-auto-rows: 30px;
+    font-family: sans-serif;
+
+}
+
+
+
+#reset {
+
+    background-color: rgb(154, 160, 189);
+    border: none;
+    color: black;
+    margin: 10px;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+div {
+
+    color: black;
+    font-size: 6px;
+}
+
+.grid-item {
+
+    border: 2px solid black;
+    border-radius: 3px;
+    background-color: white;
+
+}
+
+/* .grid-item:hover {
+
+    border: 1px solid#ccc;
+    border-radius: 0px;
+    border-color: green;
+
+    background-color: blue;
+ 
+    color: white;
+
+}  */

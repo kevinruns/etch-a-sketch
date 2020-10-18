@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styler.css">
+</head>
+
+<body>
+
+
+    <button id='reset'>Reset Grid</button>
+
+    <div id='container'>
+    </div>
+
+
+    <script>
+
+        let container = document.querySelector('#container');
+        let gridSize = 16;
+
+        function createGrid(rows, cols) {
+
+            for (i = 0; i < rows; i++) {
+                for (j = 0; j < cols; j++) {
+                    let newItem = document.createElement('div');
+                    newItem.classList.add('grid-item');
+                    newItem.textContent = "";
+                    container.appendChild(newItem);
+                }
+            }
+        }
+
+        createGrid(gridSize, gridSize);
+//        document.container.style.setProperty('--myvariable',16)
+
+
+        const items = document.querySelectorAll('.grid-item');
+        items.forEach(item => item.addEventListener('mouseenter', function(event) {
+           event.target.style.backgroundColor = "red";
+        }));
+
+        const reset = document.querySelector('button');
+        reset.addEventListener('click', function() {
+            //document.getElementsByClassNam("grid-item").style.backgroundColor = "white"; 
+            items.forEach(item => item.style.backgroundColor = "white");
+            gridSize = prompt("Size of new grid?");
+
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>
