@@ -8,9 +8,8 @@
 
     display: grid;
     grid-template-columns: repeat(var(--gridsize), 1fr);
-    grid-auto-rows: 30px;
     font-family: sans-serif;
-
+    height: 900px;
 }
 
 
