@@ -1,22 +1,16 @@
-
-
 :root {
     --gridsize: 16;
 }
 
 #container {
-
     display: grid;
     grid-template-columns: repeat(var(--gridsize), 1fr);
     font-family: sans-serif;
     height: 900px;
 }
 
-
-
 #reset {
-
-    background-color: rgb(154, 160, 189);
+    background-color: rgb(0, 247, 255);
     border: none;
     color: black;
     margin: 10px;
@@ -28,17 +22,14 @@
 }
 
 div {
-
     color: black;
     font-size: 6px;
 }
 
 .grid-item {
-
     border: 2px solid black;
     border-radius: 3px;
     background-color: white;
-
 }
 
 /* .grid-item:hover {
