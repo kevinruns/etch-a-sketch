@@ -21,14 +21,18 @@
 
         let container = document.querySelector('#container');
 
-        let gridSize = 16;
+        let gridSize = 8;
         createGrid(gridSize, gridSize);
-
         let items = document.querySelectorAll('.grid-item');
 
-        items.forEach(item => item.addEventListener('mouseenter', function (event) {
-            event.target.style.backgroundColor = "red";
-        }));
+        colorListener();
+
+
+        function colorListener() {
+            items.forEach(item => item.addEventListener('mouseenter', function (event) {
+                event.target.style.backgroundColor = "red";
+            }));
+        }
 
         let reset = document.querySelector('button');
 
@@ -37,6 +41,8 @@
             gridSize = prompt("Size of new grid?");
             removeGrid();
             createGrid(gridSize, gridSize);
+            items = document.querySelectorAll('.grid-item');
+            colorListener();
         });
 
 
@@ -57,7 +63,7 @@
 
         function removeGrid() {
             let items = document.querySelectorAll('.grid-item');
-            items.forEach(item => item.remove());
+            items.forEach(item => item.parentNode.removeChild(item));
         }
 
 
