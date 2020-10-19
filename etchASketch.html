@@ -27,7 +27,6 @@
 
         colorListener();
 
-
         function colorListener() {
             items.forEach(item => item.addEventListener('mouseenter', function (event) {
                 event.target.style.backgroundColor = "red";
@@ -38,7 +37,11 @@
 
         reset.addEventListener('click', function () {
             items.forEach(item => item.style.backgroundColor = "white");
-            gridSize = prompt("Size of new grid?");
+            let selected = false;
+            while ((gridSize > 99) || (selected === false)) {
+                gridSize = prompt("Size of new grid?");
+                selected = true;
+            }
             removeGrid();
             createGrid(gridSize, gridSize);
             items = document.querySelectorAll('.grid-item');
