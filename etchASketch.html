@@ -20,7 +20,25 @@
     <script>
 
         let container = document.querySelector('#container');
+
         let gridSize = 16;
+        createGrid(gridSize, gridSize);
+
+        let items = document.querySelectorAll('.grid-item');
+
+        items.forEach(item => item.addEventListener('mouseenter', function (event) {
+            event.target.style.backgroundColor = "red";
+        }));
+
+        let reset = document.querySelector('button');
+
+        reset.addEventListener('click', function () {
+            items.forEach(item => item.style.backgroundColor = "white");
+            gridSize = prompt("Size of new grid?");
+            removeGrid();
+            createGrid(gridSize, gridSize);
+        });
+
 
         function createGrid(rows, cols) {
 
@@ -32,24 +50,15 @@
                     container.appendChild(newItem);
                 }
             }
+
+            container.style.setProperty('--gridsize', rows);
         }
 
-        createGrid(gridSize, gridSize);
-//        document.container.style.setProperty('--myvariable',16)
 
-
-        const items = document.querySelectorAll('.grid-item');
-        items.forEach(item => item.addEventListener('mouseenter', function(event) {
-           event.target.style.backgroundColor = "red";
-        }));
-
-        const reset = document.querySelector('button');
-        reset.addEventListener('click', function() {
-            //document.getElementsByClassNam("grid-item").style.backgroundColor = "white"; 
-            items.forEach(item => item.style.backgroundColor = "white");
-            gridSize = prompt("Size of new grid?");
-
-        });
+        function removeGrid() {
+            let items = document.querySelectorAll('.grid-item');
+            items.forEach(item => item.remove());
+        }
 
 
     </script>

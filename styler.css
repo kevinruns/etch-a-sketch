@@ -1,13 +1,13 @@
 
 
 :root {
-    --myvariable: 16;
+    --gridsize: 16;
 }
 
 #container {
 
     display: grid;
-    grid-template-columns: repeat(var(--myvariable), 1fr);
+    grid-template-columns: repeat(var(--gridsize), 1fr);
     grid-auto-rows: 30px;
     font-family: sans-serif;
 
